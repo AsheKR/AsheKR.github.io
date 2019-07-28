@@ -1,24 +1,9 @@
-Solid. A Bootstrap theme for Jekyll.
-============
-![Screenshot](https://st4ple.github.io/solid-jekyll/assets/img/browser.png)
+[Solid. A Bootstrap theme for Jekyll.](https://github.com/st4ple/solid-jekyll)
 
-This is a [Jekyll](http://jekyllrb.com/) port of the [Solid theme](http://www.blacktie.co/2014/05/solid-multipurpose-theme/) by [blacktie.co](http://www.blacktie.co/). Visit the [live demo](https://st4ple.github.io/solid-jekyll/) for a preview. 
+##### 블로그 포스팅
 
-## Usage
+포스트를 추가하려면 `/_posts/blog/` 폴더 안에 `yyyy-mm-dd-name-of-post-like-this.markdown` 형식과 아래 내용을 포함하여 만든다.
 
-This theme can be customized, built and published straight from GitHub, thanks to [GitHub Pages](https://pages.github.com/). A local installation of Jekyll isn't even necessary!
-
-[Fork this repository](https://github.com/st4ple/solid-jekyll/fork) to get started. 
-#### Customize  
-Most general settings and data like site name, colors, address, etc. can be configured and changed right in the main config file: `/_config.yml`
-The content of the Home page can be changed here: `/home.html`
-The content of the About page can be changed here: `/about.html`
-The content of the Portfolio page can be changed here:`/portfolio.html`
-The content of the Contact page can be changed here:`/contact.html`
-#### Add content  
-Delete the demo content and publish your own content.
-##### Blog post
-Create a Blog post by creating a file called `yyyy-mm-dd-name-of-post-like-this.markdown` in the `/_posts/blog/` directory with the following template:
 ```markdown
 ---
 layout: post          #important: don't change this
@@ -33,12 +18,14 @@ categories:
 img: post01.jpg       #place image (850x450) with this name in /assets/img/blog/
 thumb: thumb01.jpg    #place thumbnail (70x70) with this name in /assets/img/blog/thumbs/
 ---
-This text will appear in the excerpt "post preview" on the Blog page that lists all the posts.
+아래 `<!--more-->`  태그가 오기전까지가 포스트 목록에서 보여줄 요약문이다.
 <!--more-->
-This text will not be shown in the excerpt because it is after the excerpt separator.
+이곳은 Read More을 했을 때 포스트 상세내용이 포함되는 곳이다.
 ```
 ##### Project post
-Create a Project post to go in your Portfolio by creating a file called `yyyy-mm-dd-name-of-the-project.markdown` in the `/_posts/project/` directory with the following template:
+
+포트폴리오를 추가하려면 `/_posts/project/` 폴더 안에 `yyyy-mm-dd-name-of-the-project.markdown` 형식과 아래 내용을 포함하여 만든다.
+
 ```markdown
 ---
 layout: project       #important: don't change this
@@ -60,7 +47,9 @@ website: http://www.internet.com
 This is a regular paragraph. Write as much as you like.
 ```
 ##### Question entry
-Create a Question entry (that is listed in the Frequently Asked section on the Home page) in this directory by creating a file called `yyyy-mm-dd-do-i-have-a-question.markdown` in the `/_posts/project/` directory with the following template:
+
+페이지 메인의 자주묻는 질문에 포함될 내용은 `/_posts/question/` 폴더 안에 `yyyy-mm-dd-do-i-have-a-question.markdown` 형식과 아래 내용을 포함하여 만든다.
+
 ```markdown
 ---
 layout: question
@@ -70,14 +59,6 @@ author: First Last
 categories:
 - question            #important: leave this here
 ---
-#### Can I use this theme for my website?
-Of course you can!
-```
-#### Publish
-To publish with [GitHub Pages](https://pages.github.com/), simply create a branch called `gh-pages`in your repository. GitHub will build your site automatically and publish it at `http://yourusername.github.io/repositoryname/`.  
-If there are problems with loading assets like CSS files and images, make sure that the `baseurl` in the `_config.yml`is set correctly (it should say `/repositoryname`).
-
-If you want to host your website somewhere else than GitHub (or just would like to customize and build your site locally), please check out the [Jekyll documentation](http://jekyllrb.com/). 
 
 ## License
 This theme is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
