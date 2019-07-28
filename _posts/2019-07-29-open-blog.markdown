@@ -10,6 +10,10 @@ categories:
 img: post01.jpg
 ---
 
+게을러진 나의 삶을 바로세우기위해 블로그를 시작한다.
+
+해당 포스팅에서는 GitHub.IO 설정하는 방법을 설명한다.
+
 <!--more-->
 
 # GitHub io 설정법
