@@ -1,4 +1,4 @@
-[Solid. A Bootstrap theme for Jekyll.](https://github.com/st4ple/solid-jekyll)
+# [Solid. A Bootstrap theme for Jekyll.](https://github.com/st4ple/solid-jekyll)
 
 ##### 블로그 포스팅
 
