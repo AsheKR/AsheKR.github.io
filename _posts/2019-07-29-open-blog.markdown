@@ -1,0 +1,131 @@
+---
+layout: post
+title: "블로그를 개장하며"
+date: 2019-07-26 19:54:46
+author: Ashe
+categories:
+- blog
+- githubIO
+- jekyll
+img: post01.jpg
+---
+
+<!--more-->
+
+# GitHub io 설정법
+
+## 테마선택
+
+열정이 넘치고 시간도 넘친다면 직접만든다는 선택을 할 수 있지만, 그렇지 않기때문에 테마를 검색하여 사용하는것을 추천한다.
+
+github에 `jekyll theme`를 검색하면 많이 나온다. Most Stars를 기준으로 봐서 하나씩 선택해 마음에 드는 것을 찾는다.
+
+![Image1](/assets/img/blog/posts/open-blog/Image1.png)
+
+블로그를 목적으로 사용할 예정이기때문에 `카테고리`, `태그`, `페이지네이션` 기능을 포함한 테마를 찾았다. Star 500정도까지 찾아보고 마음에 드는걸 선택했다.
+
+[SOLID.](https://github.com/st4ple/solid-jekyll) 테마를 선택했다. 페이지네이션은 없지만 마음에 들었다.
+
+## 테마설치, 수정
+
+보통 테마에는 `Usage` 같은 가이드가 존재한다. 그대로 따라해도 좋고 아래 방식을 사용해도 좋다.
+
+### 1. Fork
+
+내용을 수정하기위해서는 해당 프로젝트를 가져와야한다.
+
+![Image2](/assets/img/blog/posts/open-blog/Image2.png)
+
+포크가 완료되면 내 계정으로 해당 프로젝트가 복제되어있을것이다.
+
+### 2. 프로젝트를 GitHub.io 블로그로 변환
+
+![Image3](/assets/img/blog/posts/open-blog/Image3.png)
+
+1. Settings로 들어간다.
+
+2. 본인의 UserName을 확인 후
+
+3. Repository name을 수정한다.
+
+_반드시 아래 형식을 지켜야한다._
+`<username>.github.io`
+
+![Image4](/assets/img/blog/posts/open-blog/Image4.png)
+
+이후 Settings 페이지의 아래로 내리면 `GitHub Pages`란이 보이는데 여기서 내 사이트가 올라갔는지 확인해볼 수 있다.
+
+허나 SOLID 테마는 바로 사이트가 나오지는 않았다.
+
+#### 2-1. URL 수정
+
+![Image5](/assets/img/blog/posts/open-blog/Image5.png)
+
+이런경우에는 `_config.yml`내의 `url`을 수정해준다. 
+
+이후 다시한번 사이트에 접속해본다.
+
+![Image6](/assets/img/blog/posts/open-blog/Image6.png)
+
+정상적으로 나오게된다.
+
+### 3. 사이트 수정
+
+![Image](/assets/img/blog/posts/open-blog/Image.png)
+
+로컬환경에서 사이트를 수정하기 위해 Clone을 받아온다.
+
+```shell
+$ git clone <붙여넣기>
+```
+
+이후 받아온 사이트에서 수정하고 Git으로 관리하면 된다.
+
+## 커스텀 도메인
+
+만약 개인 도메인을 샀다면 도메인을 붙여주면 더 좋다.
+
+목적이 명확해지기위해 서브도메인을 붙여주는것을 추천한다. 서브 도메인의 개수 제한은 없으므로 마음껏 붙이자.
+
+내가 산 도메인은 `ashe.kr` 이지만 기술 블로그를 작성하기위해 `tech.ashe.kr`로 정했다.
+
+**Hosting.kr 기준으로 설명한다.**
+
+### 1. GitHub Custom Domain 설정
+
+다시한번 Settings - GitHub Pages로 온다.
+
+![Image7](/assets/img/blog/posts/open-blog/Image7.png)
+
+이번에는 Custom domain란에 내가 하고싶은 주소를 작성한다. Enforce HTTPS는 자유이지만 선택을 권장한다.
+
+### 2. 네임서버(서브도메인) 설정 관리
+
+![Image8](/assets/img/blog/posts/open-blog/Image8.png)
+
+Hosting.kr 로그인 후 내이름 - 보유 도메인을 클릭한다.
+
+![Image9](/assets/img/blog/posts/open-blog/Image9.png)
+
+도메인 선택 후 네임서버(서브도메인) 설정 관리에 들어간다.
+
+![Image10](/assets/img/blog/posts/open-blog/Image10.png)
+
+아래 네가지 중하나를 `서브도메인(A)` 로 추가한다.
+
+- 185.199.108.153
+- 185.199.109.153
+- 185.199.110.153
+- 185.199.111.153
+
+[GitHub CustomDomain 설정 링크](https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider)
+
+그 후 `별칭(CNAME)`을 자신의 github IO URL을 추가한다.
+
+이 때 뒤에 `.`을 붙이도록하자. Trailing Dot이 필요한 이유는 여기서 설명한다.
+
+[Why CNAME/MX/NS targets require a "dot"](https://stackexchange.github.io/dnscontrol/why-the-dot)
+
+설정을 모두 추가한 후 적용하기를 누르면 완료된다.
+
+그리고 잊지말아야할 `_config.yml`의 `url`을 꼭 수정해주도록하자.
