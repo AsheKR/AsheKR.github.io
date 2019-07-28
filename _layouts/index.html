@@ -1,9 +1,17 @@
 ---
 layout: default
 ---
+<!-- 테마에서 사용하던 Index.html -->
+<!-- 넣을게 없어서 Blog를 메인페이지로 대체함 -->
 {% include header.html %}
 
   {{ content }}
+
+{% include service.html %}
+
+{% include portfolio.html title="LATEST WORKS" limit=10 %}
+
+{% include index_etc.html %}
 
 {% include testimonial.html %}
 {% include clients.html %}
