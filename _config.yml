@@ -38,9 +38,9 @@ social:
     url: 'https://github.com/AsheKR'
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
-address:
-  - lines:
-    - 서울 성동구
+# address:
+#   - lines:
+#     - 서울 성동구
 email: tech@ashe.kr
 tel: +82 10 9905 2867
 
@@ -65,7 +65,7 @@ members:
 #     img: client01.png
 
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "시작할때가 되지 않았는가?"
+about: "Tpay Corp"
 
 # 추천인 content. Shown on Home and About page.
 # testimonial:
