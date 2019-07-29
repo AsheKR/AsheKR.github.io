@@ -1,0 +1,197 @@
+---
+layout: post
+title: "Vue Code Style"
+date: 2019-07-30 00:12:46
+author: Ashe
+categories:
+- Vue
+- Style
+img: post02.jpg
+---
+
+개인 코딩 스타일이 너무 이랬다 저랬다 하는 감이 없지않아있어 이참에 개인 스타일을 정리해보도록했다. 
+근거없는 주관이 많이 포함되어있는 스타일 가이드이다.
+
+이미 사용중인 기초적인건 다루지 않는다.
+
+[Vue Style Guide](https://kr.vuejs.org/v2/style-guide/index.html)
+
+# 필수
+
+
+## Private 속성 이름
+
+플러그인, Mixin 등 Private 프로퍼티에는 항상 접두사 `$_`를 포함한다.
+
+다른 사람의 코드와 충돌을 피하려면 named_scope를 포함한다.
+
+```javascript
+var myGreatMixin = {
+    methods: {
+        $_myGreatMixin_update() {
+
+        },
+    },
+}
+```
+
+# 매우 추천 (가독성 향상을 위해)
+
+
+## 파일 하나당 하나의 컴포넌트를 포함
+
+## 싱글 파일 컴포넌트 이름 규칙 지정
+
+Vue에서는 PascalCase 또는 kebab-case를 사용할 수 있는데 나는 PascalCase만을 사용한다.
+
+## 베이스 컴포넌트 이름
+
+컴포넌트 앞에 VueComponent를 나타내는 Prefix를 붙인다. Base, App, V 중에 Base가 가장 직관적이였다. 
+
+```tree
+components/
+|- AppButton.vue
+|- AppTable.vue
+|- AppIcon.vue
+```
+
+## 싱글 인스턴스 컴포넌트 이름
+
+컴포넌트가 페이지별로 단일로 사용될 때 `The` 접두사를 붙인다.
+
+```tree
+components/
+|- TheHeading.vue
+|- TheSidebar.vue
+```
+
+## 강한 연관성을 가진 컴포넌트 이름
+
+부모와 밀접하게 연결된 하위 구성 요소에는 상위 구성 요소 이름이 접두사로 포함되어야한다.
+
+```tree
+components/
+|- TodoList.vue
+|- TodoListItem.vue
+|- TodoListItemButton.vue
+```
+
+## kebab-case, CamelCase
+
+Single-file Components와 String Template에는 CamelCase
+
+DOM templates에는 kebab-case를 사용한다.
+
+Props 선언은 CamelCase, templates 안에는 kebab-case를 사용한다.
+
+```javascrtipt
+props: {
+    greetingText: String
+}
+
+<WelcomeMessage greeting-text="hi">
+```
+
+## 다중 속성 엘리먼트
+
+속성이 여러개있다면 여러 줄로 작성한다.
+
+```javascript
+<img
+    src="https://vuejs.org/images/logo.png"
+    alt="Vue Logo"
+>
+```
+
+# 추천
+
+## 컴포넌트/인스턴스 옵션 순서
+
+1. 사이드 이펙트 ( 컴포넌트 외부에 효과가 미치는 옵션)
+    - `el`
+
+2. 전역 인지 (컴포넌트 바깥의 지식을 필요로 하는 옵션)
+    - `name`
+    - `parent`
+
+3. 컴포넌트 유형 (컴포넌트의 유형을 바꾸는 옵션)
+    - `functional`
+
+4. 템플릿 변경자 (템플릿이 컴파일되는 방식을 바꾸는 옵션)
+    - `delimiters`
+    - `comments`
+
+5. 템플릿 의존성 (템플릿에 이용되는 요소들을 지정하는 옵션)
+    - `components`
+    - `directives`
+    - `filters`
+
+6. 컴포지션 (다른 컴포넌트의 속성을 가져오 합치는 옵션)
+    - `extends`
+    - `mixins`
+
+7. 인터페이스 (컴포넌트의 인터페이스를 지정하는 옵션)
+    - `inheritAttrs`
+    - `model`
+    - `props` / `propsData`
+
+8. 지역 상태 (반응적 지역 속성들을 설정하는 옵션)
+    - `data`
+    - `computed`
+
+9. 이벤트 (반응적인 이벤트에 의해 실행되는 콜백을 지정하는 옵션)
+    - `watch`
+    - LifeCycle Event
+
+10. 비반응적 속성 (시스템의 반응성과 관계없는 인스턴스 속성을 지정)
+    - `methods`
+
+11. 렌더링 (컴포넌트 출력을 선언적으로 지정하는 옵션)
+    - `template` / `render`
+    - `renderError`
+
+
+## 엘리먼트 속성 순서
+
+1. 정의(Definition) (컴포넌트 옵션을 제공하는 속성)
+    - `is`
+
+2. 리스트 렌더링(List Rendering) (같은 엘리먼트의 변형을 여러 개 생성하는 속성)
+    - `v-for`
+
+3. 조건부(Conditionals) (엘리먼트가 렌더링되는지 혹은 보여지는지 여부를 결정하는 속성)
+    - `v-if`
+    - `v-else-if`
+    - `v-else`
+    - `v-show`
+    - `v-cloak`
+
+
+4. 렌더 변경자(Render Modifiers) (엘리먼트의 렌더링 방식을 변경하는 속성)
+    - `v-pre`
+    - `v-once`
+
+5. 전역 인지(Global Awareness) (컴포넌트 바깥의 지식을 요구하는 속성)
+    - `id`
+
+
+6. 유일한 속성(Unique Attributes) (유일한 값을 가질 것을 요구하는 속성)
+    - `ref`
+    - `key`
+    - `slot`
+
+
+7. 양방향 바인딩(Two-Way Binding) (바인딩과 이벤트를 결합하는 속성)
+    - `v-model`
+
+
+8. 기타 속성 (따로 언급하지 않은 속성들)
+
+9. 이벤트(Events) (컴포넌트 이벤트 리스너를 지정하는 속성)
+    - `v-on`
+
+
+10. 내용(Content) (엘리먼트의 내용을 덮어쓰는 속성)
+    - `v-html`
+    - `v-text`
+
