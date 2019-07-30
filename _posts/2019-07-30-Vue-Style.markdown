@@ -6,7 +6,7 @@ author: Ashe
 categories:
 - Vue
 - Style
-img: post02.jpg
+img: post02.png
 ---
 
 개인 코딩 스타일이 너무 이랬다 저랬다 하는 감이 없지않아있어 이참에 개인 스타일을 정리해보도록했다. 
