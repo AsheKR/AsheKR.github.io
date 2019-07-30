@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DesignPatterns - Abstract Factory"
-date: 2019-07-31 00:32:46
+date: 2019-07-31 01:52:46
 author: Ashe
 categories:
 - Python
@@ -14,6 +14,8 @@ img: post04.jpg
 # Abstract Factory
 
 추상화(Abstract) + 팩토리(Factory)로 구성된 단어이다. 추상화는 **주체는 나중에 결정하고 목적을 달성할 수 있는 추상적인 동작만을 구현하는것이다.** 추상적인 동작을 예로들자면 `쉰다.`가 있다. 누구나(다양한 주체)가 쉬는 방법은 다르겠지만 `쉰다`라는 목적은 같을것이다.
+
+<!--more-->
 
 내가 `쉰다.` 라는 동작을 세부적으로 나타내면 다음과 같다.
 1. 눕는다.

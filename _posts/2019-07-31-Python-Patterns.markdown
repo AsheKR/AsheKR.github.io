@@ -15,8 +15,10 @@ img: post03.jpg
 
 파이썬에서 디자인 패턴과 관용어 모음
 
+<!--more-->
+
 ## Current Patterns
 
 ### 생산적인 패턴
 
-[abstract_factory]()
+[abstract_factory](https://tech.ashe.kr/python/designpatterns/Python-Abstract-Factory/)

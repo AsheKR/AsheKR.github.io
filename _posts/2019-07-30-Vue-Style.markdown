@@ -14,6 +14,8 @@ img: post02.png
 
 이미 사용중인 기초적인건 다루지 않는다.
 
+<!--more-->
+
 [Vue Style Guide](https://kr.vuejs.org/v2/style-guide/index.html)
 
 # 필수
