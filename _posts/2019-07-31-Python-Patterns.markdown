@@ -22,3 +22,5 @@ img: post03.jpg
 ### 생산적인 패턴
 
 [abstract_factory](https://tech.ashe.kr/python/designpatterns/Python-Abstract-Factory/)
+
+[borg](https://tech.ashe.kr/python/designpatterns/Python-Borg/)
