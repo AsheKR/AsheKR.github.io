@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 {% include wrap.html %}
@@ -23,7 +24,8 @@ layout: default
                 <a href="#"><i class="fa fa-tumblr"></i></a>
                 <a href="#"><i class="fa fa-google-plus"></i></a>		 		
             </p> -->
-        </div><! --/col-lg-8 -->
+            {% include disqus_comments.html %}
+        </div>
         
         {% include sidebar.html %}
 
