@@ -38,6 +38,8 @@ Creational 패턴
 
 ## 구현
 
+### 파이썬에서의 Singleton 구현
+
 [Python에서 Singleton을 구현하는 방법](https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python)
 
 싱글톤을 구현할 때 어떤 방법이 가장 `파이썬스럽게` 구현했는지의 논의를 위한 질문이다.
@@ -216,6 +218,42 @@ class Logger(metaclass=Singleton):
 메타클래스는 기본적으로 클래스 정의가 의미하는 바를 결정하고 그 정의를 구현하는 방법을 결정한다.
 
  하위 클래스가 `__new__` method를 정의하는 Method #2를 사용하면 `Singleton`을 상속받는 하위클래스가 **호출될때마다 실행**된다. 메타클래스의 경우, 인스턴스가 생성될 때 **단 한번만 호출**된다. You want to customize what it means to call the class, which is decided by it's type.
+
+---
+
+### Thread Safe Singleton in Python
+
+```python
+import threading
+
+lock = threading.Lock()
+
+def synchronized(lock):
+    """Synchronization decorator"""
+    
+    def wrapper(f):
+        @functools.wraps(f)
+        def inner_wrapper(*args, **kwargs):
+            with lock:
+                return f(*args, **kwargs)
+        return inner_wrapper
+    return wrapper
+
+
+class Singleton(type):
+    _instances = {}
+
+    @synchronized(lock)
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(Singleton, cls).__class__(*args, **kwargs)
+        return cls._instances[cls]
+
+
+class Logger(metaclass=Singleton):
+    pass
+```
+
 
 ## References
 
