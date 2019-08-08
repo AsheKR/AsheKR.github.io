@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DesignPatterns - Strategy"
-date: 2019-08-05 00:41:46
+date: 2019-08-06 00:41:46
 author: Ashe
 categories:
 - Python
