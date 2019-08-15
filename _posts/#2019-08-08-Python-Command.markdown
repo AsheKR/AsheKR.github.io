@@ -136,6 +136,19 @@ if __name__ == '__main__':
 
 8월 9일 추가
 
+근데 Invoker에 Command History를 저장하는 코드를 추가하면 SRP에 위반된다.
+
+```python
+# Invoker
+class OrderButton:
+    def __init__(self, command):
+        self.command = command
+
+    def pressed(self):
+        self.command.execute()
+
+```
+
 ## References
 
 - https://gmlwjd9405.github.io/2018/07/07/command-pattern.html
